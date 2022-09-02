@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=M+PLUS+Rounded+1c:wght@500&display=swap"
+      rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="wrap">
+
+    <div class="container top-container" id="top-container">
+      
+      <h3>Bill Total</h3>
+      <div class="bill-total">
+        <input type="text" class="bill-total" placeholder="0.00">
+        <span>$</span> 
+      </div>
+
+      <h3>Tip</h3>
+      <div class="tip">
+        <input type="text" placeholder="0" class="tip">
+        <span>$</span>
+      </div>
+    </div>
+
+    <div class="bottom-container" id="bottom-container">
+      <span class="splitContainer">
+        <h3>People</h3>
+        <div class="controls">
+          <span class="button-container">
+            <button class="split-button">
+              <span class="button-text">-</span>
+            </button>
+          </span>
+
+          <span class="split-amount" id="num-of-people">1</span>
+
+          <span class="button-container">
+            <button class="split-button">
+              <span class="button-text">+</span>
+            </button>
+          </span>
+        </div>
+      </span>
+
+      <div class="total-container">
+        <h3>Total per Person</h3>     
+        <div class="total">$0.00</div>     
+
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Floating Input</title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css">
+    <lint rel="script" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></lint>
+
+    <style>
+        body, jumbotron { padding: 30px;}
+        body {
+            background-image: url(/assets/ocean.jpeg);
+            background-size: cover;
+        }
+        .content {
+            font-size: 19px;
+            line-height: 1.5;
+            max-width: 500px;
+            margin: 0 auto;
+            position: relative;
+        }
+        .floater {
+            background-color: #fff;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: 1.3s, cubic-bezier(0.175, 0.85, 0.52, 1,4) all;
+            margin-bottom: 30px;
+        }
+        floater.input[type=text] {
+            padding: 30px, 20px;
+            border: none;
+            box-shadow: none;
+            font-size: 14px;
+            transition: 1.3s, cubic-bezier(0.175, 0.85, 0.52, 1,4) all;
+        }
+        .floater-bottom {
+            padding: 6px, 10px, 8px;
+            text-align: right;
+            border-top: 1px solid lightblue;
+        }
+        .floater-bottom {
+            padding: 4px 8px;
+            font-size: 10px;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.80);
+            width: 100%;
+            height: 100%;
+        }
+        body.show-floater .floater{
+            transform: scale(1.1);
+        }
+
+        /* =============SHOWING BOOKMARKS================== */
+
+        .bookmark {
+            display: #999;
+            background: #FFF;
+            color: #999;
+            padding: 20px;
+            transition: 0.5s ease all;
+            border-bottom: 1px solid #DDD;
+            font-size: 16px;
+        }
+        .bookmark:hover {
+            color: #1ce;
+            text-decoration: none;
+        }
+        .bookmarks:first-child {
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 5px;
+        }
+        .bookmark:last-child {
+            border-bottom-left-radius: 5;
+            border-bottom-right-radius: 5px;
+            border-bottom: 0;
+        }
+
+        /*  ===============STORING INFORMATION TO LOCALSTORAGE================  */ 
+
+    </style>
+</head>
+<body>
+    <div class="overlay"></div>
+
+    <div class="floater content">
+    <form class="bookmark-forms">
+        <div class="floater_top">
+            <input type="text" placeholder="What's on your mind?" class="form-control">
+        </div>
+
+        <div>
+            <button type="submit" class="btn btn-primary btn-sm">
+            Add
+            </button>
+        </div>
+    </form>      
+    </div>
+
+    <div class="bookmark-list content">
+        <a class="bookmark">I am the bookmark!</a>
+    </div>
+
+    <script>
+        const body = document.body;
+        const input = document.querySelector('input[tyep=text]');
+        const overlay = document.querySelector('.overlay');
+
+        function showFloater() {
+            body.classList.add('show-floater');
+        }
+
+        function closeFloater() {
+            if(body.classList.constins('show-floater')) {
+                body.classList.remover('show-floater');
+            }
+        }
+
+        input.addEventListener('focusin', showFloater);
+        input.addEventListener('focusout', closeFloater);
+        overlay.addEventListener('click', closeFloater);
+
+        //  ============================SHOWING BOOKMARKS =====================
+
+        const bookMarksList = docuemnt.querySelector('bookmark-list');
+        const bookMarksForm = docuemnt.querySelector('bookmark-forms');
+        const bookMarkInput = docuemtn.querySelector('input[type=text');
+
+        function createBookMark(e) {
+            e.preventDefault(e);
+            
+            const title = bookMarkInput.value;
+            const bookmarks = docuemnt.createElement('a');
+            bookmark.className ='bookmark'
+            bookmark.innerText = title;
+            bookmark.href = '#'
+            bookmark.target = '_blank_'
+            bookMarksList.appendChild(bookmark);
+            console.log('Process this form');
+
+            bookmarkForm.reset();
+        }
+
+        bookmarkForm.addEventListener('submit', createBookMark);
+
+        //  ===============STORING INFORMATION TO LOCALSTORAGE================  */ 
+
+    </script>
+</body>
+</html>

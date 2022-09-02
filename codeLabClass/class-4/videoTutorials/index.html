@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <link rel="stylesheet" href="https://www.bootstrapcdn.com/">
+    <link rel="stylesheet" href="./style.css">
+    <style>
+        body, jumbtron {padding: 30px;}
+        .content {
+            background: #EFEFEF;
+            padding: 50px;
+            font-size: 19px;
+            line-height: 1.5s;
+            min-height: 3000px;
+        }
+        .scrollLine {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 8px;
+            background: #1ce;
+            transition: 0.5s cubic-bezier(0.75, 0.82, 0.165, 1) width;
+        }
+    </style>
+</head>
+<body>
+   <div class="scrollLine"></div>
+
+
+   <div class="container">
+        <div class="content">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, aperiam temporibus nulla numquam nam officia maxime error, pariatur, omnis sunt ad quidem a quia vero eius! Esse minus possimus laboriosam?
+        </div>
+   </div>
+
+   <script>
+        const scrollLine = document.querySelector('scrollLine');
+
+        function fillScrollLine() {
+            const windowHeight = document.innerHeight;
+            const fullHeight = document.body.clientHeight; 
+            const scrolled = window.scrollY;
+            const percentScrolled = (scrolled / (fullHeight - windowHeight)) * 100%;
+
+            scrolledLine.sytle.width = percentScrolled + '%';
+            // OR
+            // scrolledLined.sytle.width = `${preentScrolled}%`;
+        }  
+
+        window.addEventListener('scroll', 'fillScrollLine');
+
+        // debounce (helper functions) function to only run at certain intervals
+   </script>
+
+</body>
+</html>
