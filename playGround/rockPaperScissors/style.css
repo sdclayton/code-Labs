@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    width: 100%;
+  }
+  
+  .sectionBtn {
+    display: flex;
+  }
+  
+  .first-square {
+    height: 100px;
+    width: 100px;
+    background-color: E07A5F;
+  }
+  
+  .second-square {
+    height: 100px;
+    width: 100px;
+    background-color: 3D405B;
+  }
+  
+  .third-square {
+    height: 100px;
+    width: 100px;
+    background-color: 81B29A;
+  }

@@ -10,6 +10,6 @@ function range(startCount, stopCount) {
 
 console.log(range(1, 5));
 
-// return #'s & letters in phrase
+if 
 
 
